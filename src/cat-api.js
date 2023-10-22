@@ -6,7 +6,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 function errorCats() {
   Notify.failure('Oops! Something went wrong! Try reloading the page!', {
     position: 'center-center',
-    timeout: 10000,
+    timeout: 5000,
     width: '400px',
     fontSize: '24px',
   });
@@ -25,8 +25,10 @@ const fetchBreeds = urlCat => {
       return resp;
     })
     .catch(() => {
-      errorCats(), (loaderBox.style.display = 'none');
+      errorCats();
+      loaderBox.style.display = 'none';
       selectBreed.style.display = 'none';
+      boxCatInfo.style.display = 'none';
     });
 };
 
@@ -50,7 +52,9 @@ const fetchCatByBreed = event => {
       </div>`;
     })
     .catch(() => {
-      errorCats(), (loaderBox.style.display = 'none');
+      errorCats();
+      boxCatInfo.style.display = 'none';
+      loaderBox.style.display = 'none';
       selectBreed.style.display = 'none';
     });
 };
