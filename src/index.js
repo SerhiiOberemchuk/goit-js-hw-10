@@ -7,7 +7,6 @@ import 'slim-select/dist/slimselect.css';
 
 const BASE_URL = 'https://api.thecatapi.com/v1/breeds';
 fetchBreeds(BASE_URL).then(resp => {
-  selectBreed.style.display = 'flex';
   const markap = resp.data
     .map(({ id, name }) => `<option value="${id}">${name}</option>`)
     .join('');

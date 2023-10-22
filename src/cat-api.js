@@ -6,11 +6,12 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 function errorCats() {
   Notify.failure('Oops! Something went wrong! Try reloading the page!', {
     position: 'center-center',
-    timeout: 5000,
+    timeout: 10000,
     width: '400px',
     fontSize: '24px',
   });
 }
+const selectBreed = document.querySelector('.breed-select');
 
 const boxCatInfo = document.querySelector('.cat-info');
 const loaderBox = document.querySelector('.loader');
@@ -20,9 +21,13 @@ const fetchBreeds = urlCat => {
     .get(urlCat)
     .then(resp => {
       loaderBox.style.display = 'none';
+      selectBreed.style.display = 'flex';
       return resp;
     })
-    .catch(() => errorCats());
+    .catch(() => {
+      errorCats(), (loaderBox.style.display = 'none');
+      selectBreed.style.display = 'none';
+    });
 };
 
 const fetchCatByBreed = event => {
@@ -44,6 +49,9 @@ const fetchCatByBreed = event => {
         <p><span style="font-weight: bold;">Temperament: </span>${dataCat.temperament}</p>
       </div>`;
     })
-    .catch(() => errorCats());
+    .catch(() => {
+      errorCats(), (loaderBox.style.display = 'none');
+      selectBreed.style.display = 'none';
+    });
 };
 export { fetchBreeds, fetchCatByBreed };
