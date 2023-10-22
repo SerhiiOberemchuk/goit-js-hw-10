@@ -8,6 +8,7 @@
       {
         "select-name": "off"
       }
-    ]
+    ],
+    "compat-api/css": "off"
   }
 }
