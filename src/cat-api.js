@@ -13,7 +13,6 @@ function errorCats() {
 }
 
 const boxCatInfo = document.querySelector('.cat-info');
-// boxCatInfo.style.display = 'none';
 const loaderBox = document.querySelector('.loader');
 
 const fetchBreeds = urlCat => {

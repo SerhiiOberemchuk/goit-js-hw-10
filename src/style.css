@@ -1,7 +1,9 @@
 .error {
   display: none;
 }
-
+.breed-select {
+  display: none;
+}
 .loader {
   position: relative;
   display: flex;
