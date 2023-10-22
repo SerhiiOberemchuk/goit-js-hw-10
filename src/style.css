@@ -12,6 +12,7 @@
 .loader:after {
   content: '';
   position: absolute;
+  top: 50px;
   border-radius: 50%;
   animation: pulsOut 1.8s ease-in-out infinite;
   filter: drop-shadow(0 0 1rem rgba(120, 15, 15, 0.75));
@@ -50,4 +51,13 @@
     box-shadow: 0 0 0 1rem rgb(8, 93, 8);
     opacity: 1;
   }
+}
+
+.loader {
+  opacity: 1;
+  transition: opacity 0.5s; /* Встановіть бажану тривалість анімації */
+}
+
+.loader.hidden {
+  opacity: 0;
 }
