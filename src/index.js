@@ -2,6 +2,7 @@ import { fetchBreeds, fetchCatByBreed } from './cat-api';
 const selectBreed = document.querySelector('.breed-select');
 
 import SlimSelect from 'slim-select';
+import 'slim-select/dist/slimselect.css';
 
 const BASE_URL = 'https://api.thecatapi.com/v1/breeds';
 fetchBreeds(BASE_URL).then(resp => {

@@ -28,6 +28,7 @@ const fetchBreeds = urlCat => {
 };
 
 const fetchCatByBreed = event => {
+  event.preventDefault();
   const breedId = event.target.value;
   boxCatInfo.style.display = 'none';
   loaderBox.style.display = 'block';
