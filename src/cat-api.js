@@ -13,15 +13,14 @@ function errorCats() {
 }
 
 const boxCatInfo = document.querySelector('.cat-info');
+// boxCatInfo.style.display = 'none';
 const loaderBox = document.querySelector('.loader');
-const errorText = document.querySelector('.error');
-errorText.style.display = 'none';
-loaderBox.style.display = 'none';
 
 const fetchBreeds = urlCat => {
   return axios
     .get(urlCat)
     .then(resp => {
+      loaderBox.style.display = 'none';
       return resp;
     })
     .catch(() => errorCats());
@@ -43,7 +42,7 @@ const fetchCatByBreed = event => {
       <div>
         <h1>${dataCat.name}</h1>
         <p>${dataCat.description}</p>
-        <p><span style="font-weight: bold;">Temperament:</span>${dataCat.temperament}</p>
+        <p><span style="font-weight: bold;">Temperament: </span>${dataCat.temperament}</p>
       </div>`;
     })
     .catch(() => errorCats());
