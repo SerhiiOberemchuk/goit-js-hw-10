@@ -11,7 +11,7 @@ fetchBreeds(BASE_URL).then(resp => {
   // new SlimSelect(selectBreed, {
   //   placeholder: 'Custom Placeholder Text',
   // });
-  selectBreed.slim.open();
+  // selectBreed.slim.open();
 });
 
 selectBreed.addEventListener('change', fetchCatByBreed);
